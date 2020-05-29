@@ -1,6 +1,15 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri May 15 09:33:32 2020
+
+You have a positive integer m and a non-negative integer s.
+Your task is to find the smallest and the largest of the numbers that have length m and sum of digits s. 
+The required numbers should be non-negative integers written in the decimal base without leading zeroes.
+
+Input:                           Input:    
+2 15                             3 0
+
+Output:                          Output:
+69 96                            -1 -1
 
 @author: Harshal
 """
