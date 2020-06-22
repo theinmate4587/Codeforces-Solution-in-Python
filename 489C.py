@@ -1,41 +1,16 @@
 # -*- coding: utf-8 -*-
 """
-
-You have a positive integer m and a non-negative integer s.
-Your task is to find the smallest and the largest of the numbers that have length m and sum of digits s. 
-The required numbers should be non-negative integers written in the decimal base without leading zeroes.
-
-Input:                           Input:    
-2 15                             3 0
-
-Output:                          Output:
-69 96                            -1 -1
+Created on Mon Jun 22 10:02:17 2020
 
 @author: Harshal
 """
 
-leng,sums=list(map(int,input().split()))
 
-def solve(cur,sums):
-    
-    if sums<0 or (len(cur)==leng and sums!=0):
-        
-        return 
-    elif len(cur)==leng and sums==0:
-        
-        ans.append( int(cur))
-        return
-    for i in range(9,-1,-1):
-        if sums-i<0:
-            continue
-        solve(cur+str(i),sums-i)
-ans=[]
-solve("",sums)
-a=max(ans)
-b=min(ans)
-if a==0 and b==0:
-    print(-1,end=" ")
-    print(-1)
+m,s=[int(i) for i in input().split()]
+if (s==0 and m!=1) or s>9*m:
+    print(-1,-1)
 else:
-    print(b,end=" ")
-    print(a)
+    a=(10**((s-1)//9)*((s-1)%9+1))-1+10**(m-1)
+    b=(10**m)-(10**(m-(s-1)//9-1))*(10-(s-(s-1)//9*9))
+    print(int(a),b)
+    
